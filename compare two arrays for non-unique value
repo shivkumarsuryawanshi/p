@@ -1,0 +1,22 @@
+#compare two arrays for non-unique value
+def solution(x, y):
+    if len(x)>len(y):
+        for i in x:
+            a=False
+            for j in y:
+                if i==j:
+                    a=True
+                    break;
+            if a==False:
+                return i
+    else:
+        for i in y:
+            a=False
+            for j in x:
+                if i==j:
+                    a=True
+                    break;
+            if a==False:
+                return i
+print(solution([13, 5, 6, 2, 5],[5, 2, 5, 13]))
+print(solution([14, 27, 1, 4, 2, 50, 3, 1], [2, 4, -4, 3, 1, 1, 14, 27, 50]))
