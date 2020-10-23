@@ -1,0 +1,33 @@
+//10 to 3 Base
+def solution(n,b):
+    k=len(n)
+    m=n
+    t=[]
+    while m not in t:
+        t.append(m)
+        s=sorted(m)
+        x=''.join(s[::-1])
+        y=''.join(s)
+        if b == 10:
+            int_m=int(x)-int(y)
+            m=str(int_m)
+        else:
+            int_m_10=int(o(x,b))-int(o(y,b))
+            m=p(str(int_m_10),b)
+        m= (k-len(m))*'0'+m
+    return len(t)-t.index(m)
+def p(int_base_10,n):
+    h=int(int_base_10)
+    d=[]
+    while h>=n:
+        r=h%n
+        d.append(str(r))
+        h=(h-r)//n
+    d.append(str(h))
+    return ''.join(d[::-1])
+def o(i,n):
+    x=list(i[::-1])
+    y=0
+    for i,a in enumerate(x):
+        y+=int(a)*(n**i)
+    return str(y)
