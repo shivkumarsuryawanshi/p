@@ -1,0 +1,8 @@
+#replication
+def solution(x,y):
+    c=0
+    while not(int(x)==1and int(y)==1):
+        if int(x)<=0 or int(y)<=0:return"impossible"
+        if int(y)==1:return str(c+int(x)-1)
+        else:c+=int(int(x)/int(y));x,y=int(y),int(x)%int(y)
+    return str(c)
